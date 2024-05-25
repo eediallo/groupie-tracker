@@ -8,7 +8,7 @@ Groupie Tracker is a project aimed at receiving and manipulating data from a giv
 - [Reza](https://github.com/Reza-sd)
 ## Usage: How to Run
 Dockerize the  [Groupie Tracker](https://learn.01founders.co/git/ediallo/groupie-tracker) application, by following these steps:
-1. Make sure [Docker]() is set on your machine.
+1. Make sure [Docker](https://docs.docker.com/engine/install/) is set on your machine.
 1. Clone the repository: ```git@github.com:abdoulcyf/groupie-tracker.git```
 2. Navigate to the project directory: `cd groupie-tracker`
 3. Build the Docker image: `docker build -t [image name] .`
@@ -16,7 +16,7 @@ Dockerize the  [Groupie Tracker](https://learn.01founders.co/git/ediallo/groupie
 5. Access the application in your web browser at: `http://localhost:8080`
 
 ## Implementation Details: Algorithm
-The ASCII Art generation algorithm works as follows:
+Groupie Tracker algorithm works as follows:
 - The backend is implemented in Go, adhering to best practices and utilizing only standard Go packages.
 - The site and server are designed to handle requests without crashing, ensuring stability.
 - All pages are thoroughly tested and functional, with error handling implemented where necessary.

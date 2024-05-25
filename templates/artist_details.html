@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{.ArtistCSSPageAddress}}" type="text/css">
+    <title>Groupie Tracker</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Groupie Tracker</h1>
+    </div>
+
+    <div class="main-content">
+ 
+        <div class="artist-card">
+            <div class="artist-info">
+                <div class="artist-name">{{.Name}}</div>
+                <img class="artist-img" src="{{.ImageUrl}}" alt="artist image">
+                <div class="artist-details">
+                    <div><b>Creation Date:</b> {{.CreationDate}}</div>
+                    <div><b>First Album:</b> {{.FirstAlbum}}</div>
+                </div>
+            </div>
+            <div class="artist-relations">
+                <div><b>Concerts:</b>
+                    <ul>
+                        {{range $key, $value := .Relation}}
+                        <li><b>{{$key}}:</b>
+                            <ul>
+                                {{range $value}}
+                                <li>{{.}}</li>
+                                {{end}}
+                            </ul>
+                        </li>
+                        {{end}}
+                    </ul>
+                </div>
+                <div><b>Members:</b>
+                    <ul>
+                        {{range .Members}}
+                        <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <a href={{.HomePage}}>
+        
+        <button >Back To HomePage</button>
+    </a>
+
+</body>
+
+</html>

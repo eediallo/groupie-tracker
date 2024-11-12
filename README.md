@@ -9,7 +9,7 @@ Groupie Tracker is a project aimed at receiving and manipulating data from a giv
 ## Usage: How to Run
 Dockerize the  [Groupie Tracker](https://learn.01founders.co/git/ediallo/groupie-tracker) application, by following these steps:
 1. Make sure [Docker](https://docs.docker.com/engine/install/) is set on your machine.
-1. Clone the repository: ```git@github.com:abdoulcyf/groupie-tracker.git```
+1. Clone the repository: ```git@github.com:eediallo/groupie-tracker.git```
 2. Navigate to the project directory: `cd groupie-tracker`
 3. Build the Docker image: `docker build -t [image name] .`
 4. Run the Docker container: `docker run -p 8080:8080 [image name]`

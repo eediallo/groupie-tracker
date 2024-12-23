@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{.CSSHomePath}}" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{.CSSHomePath}}" type="text/css" />
     <title>Groupie Tracker</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
+      <header>
         <h1>Groupie Tracker</h1>
+        <p>
+          The data used in this project has originally come from
+          <a
+            class="api"
+            href="https://groupietrackers.herokuapp.com/api"
+            target="_blank"
+            >here</a
+          >
+        </p>
+      </header>
 
-        <label >Input the artist's name : </label>
-        <input type="text" id="input-value" placeholder="        ">
-        <input type="submit" id="submit" value="Click here to search" onclick="displayArtistUrl()">
+      <label>Search for a band: </label>
+      <input type="text" id="input-value" placeholder="        " />
+      <input
+        type="submit"
+        id="submit"
+        value="Click here to search"
+        onclick="displayArtistUrl()"
+      />
     </div>
 
     <div class="row">
-        {{if eq .Type "artist"}}
-        {{range .Artists}}
-        <a id="artist-url" href="{{$.URLSegmentArtist}}{{$.QueryParamDelimiter}}{{$.ArtistIDQueryParam}}={{.ID}}" jsVarArtistPath="{{$.URLSegmentArtist}}?name=">
-            <div class="column person">
-                <p class="name"><b>{{.Name}}</b></p>
-                <img class="artist-img" src="{{.ImageUrl}}" alt="artist image">
-            </div>
-        </a>
-        {{end}}
-        {{end}}
+      {{if eq .Type "artist"}} {{range .Artists}}
+      <a
+        id="artist-url"
+        href="{{$.URLSegmentArtist}}{{$.QueryParamDelimiter}}{{$.ArtistIDQueryParam}}={{.ID}}"
+        jsVarArtistPath="{{$.URLSegmentArtist}}?name="
+      >
+        <div class="column person">
+          <p class="name"><b>{{.Name}}</b></p>
+          <img class="artist-img" src="{{.ImageUrl}}" alt="artist image" />
+        </div>
+      </a>
+      {{end}} {{end}}
     </div>
 
-
     <script src="{{$.JsFilePath}}"></script>
-
-
-
-
-</body>
-
+  </body>
 </html>
